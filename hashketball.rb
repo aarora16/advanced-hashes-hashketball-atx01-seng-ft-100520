@@ -164,3 +164,27 @@ def team_colors(name)
   end
 end
 
+
+def player_numbers(name)
+  numbers = []
+  game_hash.each do |keys|
+    if keys[1][:team_name] == name
+      keys[1][:players].each do |player|
+        numbers.push(player[:number])
+      end
+    end
+  end
+end
+
+
+def player_stats(players_name)
+  game_hash.each do |key|
+    key[1][:players].each do |player|
+      if player[:player_name] == players_name
+        return player
+      end
+    end
+  end
+end
+
+
