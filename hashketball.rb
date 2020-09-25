@@ -1,3 +1,4 @@
+require 'pry'
 # Write your code below game_hash
 def game_hash
   {
@@ -126,4 +127,30 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(name)
+  for stats in game_hash[:home][:players] do
+    if stats[:player_name] == name
+      return stats[:points]
+    end
+  end
+  for stats in game_hash[:away][:players] do
+    if stats[:player_name] == name
+      return stats[:points]
+    end
+  end
+end
+
+
+def shoe_size(name)
+  for stats in game_hash[:home][:players] do
+    if stats[:player_name] == name
+      return stats[:shoe]
+    end
+  end
+  for stats in game_hash[:away][:players] do
+    if stats[:player_name] == name
+      return stats[:shoe]
+    end
+  end
+end
+
