@@ -172,7 +172,7 @@ def team_names
 end
 
 
-def player_numbers(name)
+def player_numbers(team_name)
   numbers = []
   game_hash.each do |keys|
     if keys[1][:team_name] == name
